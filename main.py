@@ -84,16 +84,16 @@ def signup_login(type):
         else:
             try:
                 budget = int(budget_ent.get())
-                budget = str(budget)
                 saving = int(saving_ent.get())
+                if saving >= budget:
+                    messagebox.showerror('Error', 'Saving exceeds budget')
+                    return
+                if saving < 0 or budget < 0:
+                    messagebox.showerror('Error', "negative numbers aren't allowed")
+                    return
+                budget = str(budget)
             except:
                 messagebox.showerror('Error', 'Budget and saving must both be a number')
-                return
-            if saving >= budget:
-                messagebox.showerror('Error', 'Saving exceeds budget')
-                return
-            if saving < 0 or budget < 0:
-                messagebox.showerror('Error', "negative numbers aren't allowed")
                 return
             if not budget or not saving:
                 messagebox.showerror('Error', 'Please Enter your monthly budget and saving')
@@ -174,16 +174,16 @@ def edit_budget():
     else:
         try:
             budget = int(budget_ent.get())
-            budget = str(budget)
             saving = int(saving_ent.get())
+            if saving >= budget:
+                messagebox.showerror('Error', 'Saving exceeds budget')
+                return
+            if saving < 0 or budget < 0:
+                messagebox.showerror('Error', "negative numbers aren't allowed")
+                return
+            budget = str(budget)
         except:
             messagebox.showerror('Error', 'budget and saving must be a number')
-            return
-        if saving >= budget:
-            messagebox.showerror('Error', 'Saving exceeds budget')
-            return
-        if saving < 0 or budget < 0:
-            messagebox.showerror('Error', "negative numbers aren't allowed")
             return
         encrypted_budget = simple_encrypter.encrypt(budget)
         classified.loc[classified['account'] == account, 'budget_code'] = encrypted_budget['code']
