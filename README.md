@@ -13,7 +13,20 @@
 - 🛡 Secure handling of financial data
 
 ---
+## 📸 Screenshots:
+- Loading screen: <br>
+![loading](https://github.com/user-attachments/assets/e9d44479-827e-401e-9f2b-1a1f888db6e9)<br>
+- Login screen: <br>
+![login](https://github.com/user-attachments/assets/ca409f35-254b-43ec-b070-5d0289f513dc)<br>
+- Options screen: <br>
+![options](https://github.com/user-attachments/assets/723cf590-57b9-4bd2-8d0b-6c29c7a35057)<br>
+- Entries screen: <br>
+![Entries](https://github.com/user-attachments/assets/25371390-0ade-4959-b862-b5651aab828c)<br>
+- Dashboard example: <br>
+![dashboard1](https://github.com/user-attachments/assets/c4cc3328-8da3-4f45-a021-c665aaf2e6e2)<br>
+![dashboard2](https://github.com/user-attachments/assets/a177efe4-3cac-4cd4-88e3-a5dcb11f21eb)
 
+---
 ## 📂 Files Overview
 
 | File | Description |
