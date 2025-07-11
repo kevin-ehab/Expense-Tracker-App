@@ -94,7 +94,7 @@ I have a github repo only for it -> [simple-encrypter](https://github.com/kevin-
 
 The dashboard includes:
 
-- 🥧 **Pie Chart**: Category-wise expenses
+- ⭕ **Pie Chart**: Category-wise expenses
 - 📉 **Trend Chart**: Spending over time vs average
 - 📊 **Bar Chart**: Daily spending as % of budget
 - 📝 **Table**: Detailed breakdown of daily expenses
