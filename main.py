@@ -149,16 +149,16 @@ login.grid(row=7, column=1)
 
 #options screen(AKA. frame2)
 tk.Label(frame2, text="Options:", font=('Aerial', 20)).grid(row=0, column=1)
-   
+
 tk.Label(frame2).grid(row=1, column=0)
 tk.Label(frame2).grid(row=2, column=0)
 
 def add_data():
     show_frame(frame3)
-
 add_data_btn = tk.Button(frame2, text='add new expenses', command=add_data)
-add_data_btn.grid(row=3, column=0)
 
+add_data_btn.grid(row=3, column=0)
+tk.Button(frame2, text='switch accounts', command= lambda: show_frame(frame1)).grid(row=4, column=0)
 #added a counter to check if the budget is changed
 c = 0
 def edit_budget():
@@ -209,12 +209,17 @@ def view_data():
     
     saving = classified.loc[classified['account'] == account, 'saving'].iloc[0]
     expenses = pd.read_csv('Expenses.csv')
-    days = len(pd.unique(expenses['date']))
+    extracted_df = expenses[expenses['account'] == account]
+
+    days = len(pd.unique(extracted_df['date']))
     if days > 30:
         days = 30
-    extracted_df = expenses[expenses['account'] == account].tail(days)
-    total_sum = sum(extracted_df['total'])
+    if days == 1:
+        messagebox.showerror('Error', 'You must enter data for more \nthan one day to use this feature')
+        return
+    extracted_df = extracted_df.tail(days)
 
+    total_sum = sum(extracted_df['total'])
     food = sum(extracted_df['food'])
     transportation = sum(extracted_df['transportation'])
     shopping = sum(extracted_df['shopping'])
